@@ -26,10 +26,7 @@ pipeline {
         stage('Scan') {
             steps {
                 sh "sudo docker scan hello-php"
-                sh ''''
                 set +e
-                ..
-                '''
             }
         }            
     }
