@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Registrando Imagen') {
             steps {
-                sh "sudo docker tag hello-php brayanumba/hello-php:v1"
+                sh "sudo docker tag hello-brayan brayanumba/hello-php:v1"
             }
         }
         stage('Push') {
