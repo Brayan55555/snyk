@@ -25,8 +25,7 @@ pipeline {
         }
         stage('Scan') {
             steps {
-                sh "sudo docker scan hello-brayan"
-                sh "y"
+                sh "sudo docker scan hello-brayan -y"
             }
         }            
     }
