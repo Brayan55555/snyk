@@ -25,10 +25,7 @@ pipeline {
         }       
         stage('Scan') {
             steps {
-                try {
-                        sh "sudo docker scan --json hello-php"
-                    } catch (e) { echo "Caught exception: ${e}"
-                }    
+                sh "sudo docker scan --json hello-php"
             }
         }                  
     }
