@@ -24,12 +24,13 @@ pipeline {
             }
         }       
         script {
-                try {
-                    sh "sudo docker scan --json hello-php"
-                } catch (err) {
-                    echo err.getMessage()
-                    echo "Error detected, but we will continue."
-                }
+        try {
+            sh "sudo docker rmi frontend-test"
+        } catch (err) {
+            echo err.getMessage()
+            echo "Error detected, but we will continue."
+        }
+        
         }                 
     }
     post{
@@ -42,3 +43,4 @@ pipeline {
     }
 }
 
+sh "sudo docker scan --json hello-php"
