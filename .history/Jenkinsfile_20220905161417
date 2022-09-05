@@ -25,11 +25,7 @@ pipeline {
         }       
         stage('Scan') {
             steps {
-                try {
-                sh "sudo docker push brayanumba/hello-php:v1"
-                } catch (e) {
-                    echo "Caught exception: ${e}"
-                }
+                sh "sudo docker scan --json hello-php"
             }
         }                  
     }
