@@ -27,9 +27,7 @@ pipeline {
             steps {
                 try {
                     sh "sudo docker scan --json hello-php"
-                    } catch (e) { 
-                        echo err.getMessage()
-                        echo "Error detected, but we will continue."
+                    } catch (e) { echo "Caught exception: ${e}"
                 }    
             }
         }                  
@@ -43,4 +41,3 @@ pipeline {
         }
     }
 }
-
