@@ -15,14 +15,7 @@ pipeline {
         }
         stage('Registrando Imagen') {
             steps {
-                script {
-                    try {
-                        sh "sudo docker scan --json hello-php"
-                    } catch (Exception e) {
-                        echo 'Exception occurred: ' + e.toString()
-                        sh 'Handle the exception!'
-                    }
-                }
+                sh "sudo docker tag hello-php brayanumba/hello-php:v1"
             }
         }
         stage('Push') {
@@ -44,14 +37,4 @@ pipeline {
             attachLog: true
         }
     }
-}
-
-
-script {
-  try {
-      sh "sudo docker scan --json hello-php"
-  } catch (Exception e) {
-      echo 'Exception occurred: ' + e.toString()
-      sh 'Handle the exception!'
-  }
 }
