@@ -25,7 +25,7 @@ pipeline {
         }       
         stage('Scan') {
             steps {
-                sh "sudo docker scan --severity=medium hello-php"
+                sh "sudo docker scan --accept-license hello-php"
             }
         }                  
     }
